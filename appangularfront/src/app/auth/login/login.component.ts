@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/auth/login.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,8 @@ export class LoginComponent {
     password:["",Validators.required]
   });
 
-  constructor(private formbuilder: FormBuilder, private router:Router) { }
+  constructor(private formbuilder: FormBuilder, private router:Router,
+    private loginService: LoginService) { }
 
   get email(){
     return this.loginForm.controls.email;
@@ -26,7 +28,7 @@ export class LoginComponent {
 
   login(){
     if(this.loginForm.valid){
-      console.log("Llamar al servicio de login");
+      this.loginService.login(this.loginForm.value);
       this.router.navigate(["/inicio"]);
       this.loginForm.reset();
     }else{

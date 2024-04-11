@@ -7,4 +7,8 @@ export class LoginService {
 
   constructor() { }
   
+  login(credentials:any){
+    console.log(credentials);
+  }
+
 }
