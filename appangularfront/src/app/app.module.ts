@@ -9,6 +9,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { LoginComponent } from './auth/login/login.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { LoginComponent } from './auth/login/login.component';
     FooterComponent,
     DashboardComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
