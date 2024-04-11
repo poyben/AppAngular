@@ -12,7 +12,7 @@ import { LoginRequest } from '../../services/auth/loginRequest';
 export class LoginComponent {
 
   loginForm=this.formbuilder.group({
-    email:["ejemplo@gmail.com",[Validators.required,Validators.email]],
+    email:["ruben@gmail.com",[Validators.required,Validators.email]],
     password:["",Validators.required]
   });
 
