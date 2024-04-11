@@ -12,7 +12,7 @@ export class LoginService {
   constructor(private http: HttpClient) { }
   
   login(credentials:LoginRequest):Observable<User>{
-    return this.http.get<User>("./assets/data.json").pipe(
+    return this.http.get<User>("././assets/data.json").pipe(
       catchError(this.handleError)
     )
   
@@ -24,7 +24,7 @@ export class LoginService {
     }else{
       console.error("Código de estado del Backend: ", error.error);
     }
-    return throwError(()=> new Error("Ha ocurrido un error, por favor intentelo de nuevo"));
+    return throwError(()=> new Error("Algo falló, por favor intentelo de nuevo"));
   
 
   }

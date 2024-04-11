@@ -10,7 +10,7 @@ import { LoginRequest } from '../../services/auth/loginRequest';
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-
+  loginError:string = "";
   loginForm=this.formbuilder.group({
     email:["ruben@gmail.com",[Validators.required,Validators.email]],
     password:["",Validators.required]
@@ -35,14 +35,16 @@ export class LoginComponent {
         },
         error: (errorData) => {
           console.log(errorData);
+          this.loginError = errorData;
         },
         complete: () => {
           console.log("Login completado");
+          this.router.navigateByUrl("/inicio");
+      this.loginForm.reset();
         }
       });
       
-      this.router.navigate(["/inicio"]);
-      this.loginForm.reset();
+      
     }else{
       this.loginForm.markAllAsTouched();
       alert("Formulario invalido");
