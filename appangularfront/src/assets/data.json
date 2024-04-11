@@ -2,6 +2,6 @@
     "message": "Autenticación exitosa",
     "id": "1",
     "name": "Ruben",
-    "lastname": "Gonzalez",
+    "lastName": "Gonzalez",
     "email": "ruben@gmail.com"
 }
