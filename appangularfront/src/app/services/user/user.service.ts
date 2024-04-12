@@ -11,7 +11,7 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  geUser(id:number):Observable<User>{
+  getUser(id:number):Observable<User>{
     return this.http.get<User>(environment.urlApi+'/user/'+id).pipe(
       catchError(this.hadleError)
     )
