@@ -1,6 +1,17 @@
 <app-nav></app-nav>
 <p *ngIf="!userLoginOn">Usuario no autenticado</p>
 <p *ngIf="userLoginOn">Usuario autenticado</p>
+
+<div class="card">
+  <div class="card-header">
+    <h3>Datos personales</h3>
+  </div>
+  <div class="card-body m-0">
+    <app-personal-details></app-personal-details>
+  </div>
+</div>
+
+
 <div *ngIf="userLoginOn">
   <p>Nombre: {{userData?.name}}</p>
   <p>Apellido: {{userData?.lastName}}</p>
