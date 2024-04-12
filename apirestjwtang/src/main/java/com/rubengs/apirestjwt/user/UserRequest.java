@@ -13,8 +13,8 @@ public class UserRequest {
 
 	int id;
 	String username;
-	String firstName;
-	String lastName;
+	String firstname;
+	String lastname;
 	String country;
 	
 }
