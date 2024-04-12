@@ -23,6 +23,7 @@ public class UserService {
 				.build();
 				
 				userRepository.updateUser(user.id, user.firstname, user.lastname, user.country);
+				return new UserResponse("El usuario se ha modificado");
 		
 	}
 	

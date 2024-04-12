@@ -20,7 +20,7 @@ public class UserController {
 	@GetMapping(value="{id}")
 	public ResponseEntity<UserDto>getUser(@PathVariable Integer id){
 		UserDto userDto = userService.getUser(id);
-		if(userDtop==null) {
+		if(userDto==null) {
 			return ResponseEntity.notFound().build();
 		}
 		return ResponseEntity.ok(userDto);
