@@ -12,7 +12,7 @@ import { LoginRequest } from '../../services/auth/loginRequest';
 export class LoginComponent {
   loginError:string = "";
   loginForm=this.formbuilder.group({
-    email:["ruben@gmail.com",[Validators.required,Validators.email]],
+    username:["",[Validators.required]],
     password:["",Validators.required]
   });
 
@@ -20,7 +20,7 @@ export class LoginComponent {
     private loginService: LoginService) { }
 
   get email(){
-    return this.loginForm.controls.email;
+    return this.loginForm.controls.username;
   }
 
   get password(){

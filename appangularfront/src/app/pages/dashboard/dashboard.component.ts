@@ -9,7 +9,6 @@ import { User } from '../../services/auth/user';
 })
 export class DashboardComponent implements OnInit, OnDestroy{
   userLoginOn:boolean = false;
-  userData?:User;
   constructor(private loginService:LoginService) { }  
   ngOnDestroy(): void {
     this.loginService.currentUserData.unsubscribe();
@@ -23,12 +22,6 @@ export class DashboardComponent implements OnInit, OnDestroy{
         }
       }
     );
-    this.loginService.currentUserData.subscribe(
-      {
-        next:(userData) => {
-          this.userData = userData;
-        }
-      }
-    );
+    
   }
 }
