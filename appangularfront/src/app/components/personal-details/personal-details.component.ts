@@ -19,8 +19,8 @@ export class PersonalDetailsComponent {
 
   registerForm=this.formBuilder.group({
     id:[""],
-    firstname:["",[Validators.required]],
-    lastname:["",[Validators.required]],
+    firstname:["",Validators.required],
+    lastname:["",Validators.required],
     password:["",Validators.required]
   });
 
@@ -28,6 +28,9 @@ export class PersonalDetailsComponent {
     this.userService.getUser(environment.userId).subscribe({
       next:(userData)=>{
         this.user = userData;
+        this.registerForm.controls.id.setValue(userData.id.toString());
+        this.registerForm.controls.firstname.setValue(userData.firstname);
+        this.registerForm.controls.lastname.setValue(userData.lastname);
       },
       error:(errorData)=>{
         this.errorMessage = errorData;
@@ -36,5 +39,18 @@ export class PersonalDetailsComponent {
         console.info("User Data ok");
       }
   });
-  }
+  this.loginService.userLoginOn.subscribe({
+    next:(userLoginOn)=>{
+      this.userLoginOn = userLoginOn;
+    }
+  })
 }
+
+get firstname(){
+  return this.registerForm.controls.firstname;
+}
+
+get lastname(){
+  return this.registerForm.controls.lastname;
+}
+
