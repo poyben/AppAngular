@@ -40,6 +40,7 @@ public class RegisterRequest {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
+	
 	public String getCountry() {
 		return country;
 	}
