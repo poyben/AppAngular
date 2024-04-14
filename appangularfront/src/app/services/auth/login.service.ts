@@ -57,4 +57,8 @@ export class LoginService {
     return this.currentUserLoginOn.asObservable();
   }
 
+get userToken():String{ 
+  return this.currentUserData.value;
+}
+
 }
