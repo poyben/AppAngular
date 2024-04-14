@@ -16,6 +16,15 @@ export class UserService {
       catchError(this.hadleError)
     )
   }
+
+  updateUser(userRequest:User):Observable<any>{
+  
+    return this.http.put<any>(environment.urlApi+'/user/'+userRequest.id, userRequest).pipe(
+      catchError(this.hadleError)
+    )
+  
+  }
+
   private hadleError(error: HttpErrorResponse){
     if(error.status===0){
       console.error("Ha habido un error", error.error);
