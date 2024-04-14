@@ -13,6 +13,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { PersonalDetailsComponent } from './components/personal-details/personal-details.component';
 import { JwtInterceptorService } from './services/auth/jwt-interceptor.service';
 import { ErrorInterceptorService } from './services/auth/error-interceptor.service';
+import { RegisterComponent } from './auth/register/register.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ErrorInterceptorService } from './services/auth/error-interceptor.servi
     LoginComponent,
     NavComponent,
     PersonalDetailsComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
