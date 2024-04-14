@@ -54,3 +54,4 @@ get lastname(){
   return this.registerForm.controls.lastname;
 }
 
+}

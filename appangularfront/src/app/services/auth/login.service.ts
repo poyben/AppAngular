@@ -53,7 +53,7 @@ export class LoginService {
     return this.currentUserData.asObservable();
   }
 
-  get userLoginOn():Observable<Boolean>{
+  get userLoginOn():Observable<boolean>{
     return this.currentUserLoginOn.asObservable();
   }
 
